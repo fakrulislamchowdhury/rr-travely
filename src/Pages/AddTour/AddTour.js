@@ -8,7 +8,7 @@ const AddTour = () => {
     const onSubmit = data => {
         console.log(data);
 
-        axios.post('http://localhost:7000/services', data)
+        axios.post('https://whispering-coast-93144.herokuapp.com/services', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Added successfully.');
@@ -28,6 +28,15 @@ const AddTour = () => {
                 <textarea {...register("detail")} placeholder='Detail' />
                 <input type="submit" />
             </form>
+            < br />
+            < br />
+            < br />
+            < br />
+            < br />
+            < br />
+            < br />
+            < br />
+            < br />
         </div>
     );
 };

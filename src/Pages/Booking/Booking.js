@@ -13,7 +13,7 @@ const Booking = () => {
     const [specificDetail, setSpecificDetail] = useState({});
 
     useEffect(() => {
-        fetch('http://localhost:7000/services')
+        fetch('https://whispering-coast-93144.herokuapp.com/services')
             .then(res => res.json())
             .then(data => setDetails(data))
     }, []);
@@ -21,7 +21,7 @@ const Booking = () => {
     useEffect(() => {
         if (details.length > 0) {
             // eslint-disable-next-line eqeqeq
-            const matchData = details.find(detail => detail.id == serviceId)
+            const matchData = details.find(detail => detail._id == serviceId)
             setSpecificDetail(matchData);
         }
     }, [details, serviceId, specificDetail])

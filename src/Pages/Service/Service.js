@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './Service.css';
 
 const Service = (props) => {
-    const { id, img, title, rating, price } = props.service;   // destructuring in service components
+    const { _id, img, title, rating, price } = props.service;   // destructuring in service components
     return (
         <Container>
             <div className='service px-4'>
@@ -18,7 +18,7 @@ const Service = (props) => {
                         <Card.Text>
                             Price: {price}
                         </Card.Text>
-                        <Link to={`/booking/${id}`}><button type="button" className="btn btn-primary">Details...</button></Link>
+                        <Link to={`/booking/${_id}`}><button type="button" className="btn btn-primary">Details...</button></Link>
                     </Card.Body>
                 </Card>
             </div>
