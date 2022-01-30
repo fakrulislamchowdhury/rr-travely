@@ -1,0 +1,26 @@
+.map{
+    height: 300px;
+    width: 1000px;
+}
+
+@media only screen and (max-width: 688px){
+    .map{
+        height: 130px;
+        width: 300px;
+    }
+    .bottom{
+        padding-bottom: 80px;
+        margin-bottom: 80px;
+    }
+}
+
+@media only screen and (min-width: 689px) and (max-width: 991px){
+    .map{
+        height: 130px;
+        width: 300px;
+    }
+    .bottom{
+        padding-bottom: 80px;
+        margin-bottom: 80px;
+    }
+}

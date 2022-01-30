@@ -1,0 +1,26 @@
+.booking{
+    display: flex;
+    color: black;
+    background-color: white;
+    text-align: justify;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.bottom{
+    padding-bottom: 100px;
+}
+
+
+.banner-container{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+@media only screen and (max-width: 688px){
+    .banner-container{
+        padding-top: 20px;
+        margin-top: 20px;
+        grid-template-columns: 1fr;
+    }
+}

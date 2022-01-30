@@ -1,0 +1,12 @@
+.banner-container{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+@media only screen and (max-width: 688px){
+    .banner-container{
+        padding-top: 20px;
+        margin-top: 20px;
+        grid-template-columns: 1fr;
+    }
+}

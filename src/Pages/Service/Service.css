@@ -1,0 +1,13 @@
+.service{
+    color: black;
+    background-color: white;
+    margin-top: 10px;
+    padding-top: 10px;
+    text-align: justify;
+    border-radius: 20px;
+}
+
+.service img{
+    border-radius: 20px;
+    padding: 10px;
+}

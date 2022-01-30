@@ -1,0 +1,27 @@
+.visit {
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 688px){
+    .visit{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .visit img{
+        grid-template-columns: repeat(1, 1fr);
+        width: 200px; 
+        height: 200px
+    }
+}
+
+@media only screen and (min-width: 689px) and (max-width: 991px){
+    .visit{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .visit img{
+        grid-template-columns: repeat(2, 1fr);
+        width: 200px; 
+        height: 200px
+    }
+}
