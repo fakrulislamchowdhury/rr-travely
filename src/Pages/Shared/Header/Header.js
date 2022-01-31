@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Container, Button } from 'react-bootstrap';
+import { Navbar, Container, Button, NavDropdown } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import icon from '../../../img/icon/RR.png';
@@ -32,30 +32,40 @@ const Header = () => {
                             <NavLink activeStyle={activeStyle} style={style} to="/services">Services</NavLink>
                             <NavLink activeStyle={activeStyle} style={style} to="/contact">Contact</NavLink>
                             <NavLink activeStyle={activeStyle} style={style} to="/about">About Us</NavLink>
-                            <NavLink activeStyle={activeStyle} style={style} to="/myTour">My Tour</NavLink>
-                            <NavLink activeStyle={activeStyle} style={style} to="/addService">Add Tour</NavLink>
                             {user.displayName ?
-                                <Button onClick={logOut} variant="light">Logout</Button>
+                                ''
                                 : <NavLink activeStyle={activeStyle} style={style} to="/login">Login</NavLink>
                             }
-                            <Navbar.Brand>
-                                <img
-                                    src={user?.photoURL ? user?.photoURL : ''}
-                                    width="30"
-                                    height="30"
-                                    border-radius="50%"
-                                    className="d-inline-block align-top"
-                                    alt=""
-                                />
-                            </Navbar.Brand>
-                            <Navbar.Text>
-                                <a href="#login">{user?.displayName ? user?.displayName : ''}</a>
-                            </Navbar.Text>
+
+                            {user.displayName ?
+                                <Navbar.Text>
+                                    <NavDropdown title={<a href="#login">{user?.displayName ? user?.displayName : ''}</a>} id="nav-dropdown" >
+                                        <NavDropdown.Item eventKey="4.1"><NavLink activeStyle={activeStyle} style={style} to="/myTour">My Tour</NavLink></NavDropdown.Item>
+                                        <NavDropdown.Item eventKey="4.2"><NavLink activeStyle={activeStyle} style={style} to="/addService">Add Tour</NavLink></NavDropdown.Item>
+                                        <NavDropdown.Divider />
+                                        <NavDropdown.Item eventKey="4.3">{user.displayName ?
+                                            <Button onClick={logOut} variant="light">Logout</Button>
+                                            : ''}
+                                        </NavDropdown.Item>
+                                    </NavDropdown>
+                                </Navbar.Text> : ''}
+
+                            {user.displayName ?
+                                < Navbar.Brand >
+                                    <img
+                                        src={user?.photoURL ? user?.photoURL : ''}
+                                        width="30"
+                                        height="30"
+                                        border-radius="50%"
+                                        className="d-inline-block align-top"
+                                        alt=""
+                                    />
+                                </Navbar.Brand> : ''}
                         </Navbar.Collapse>
                     </Container>
                 </Navbar>
             </>
-        </div>
+        </div >
     );
 };
 
