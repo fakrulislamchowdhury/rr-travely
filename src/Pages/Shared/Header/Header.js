@@ -32,6 +32,7 @@ const Header = () => {
                             <NavLink activeStyle={activeStyle} style={style} to="/services">Services</NavLink>
                             <NavLink activeStyle={activeStyle} style={style} to="/contact">Contact</NavLink>
                             <NavLink activeStyle={activeStyle} style={style} to="/about">About Us</NavLink>
+
                             {user.displayName ?
                                 ''
                                 : <NavLink activeStyle={activeStyle} style={style} to="/login">Login</NavLink>
